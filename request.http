@@ -1,4 +1,3 @@
-@url = cluster0.mdf0qyj.mongodb.net
 
 ### LEER PUNTUACIONES
 GET http://localhost:3000/puntuaciones
@@ -9,7 +8,7 @@ POST http://localhost:3000/puntuaciones
 Content-Type: application/json
 
 {
-    "nombre": "Menganito",
-    "dificultad": "Difícil",
-    "puntuacion": "7731"
+    "nombre": "Fulanita",
+    "dificultad": "Intermedio",
+    "puntuacion": "5000"
 }
