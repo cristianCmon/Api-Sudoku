@@ -77,11 +77,10 @@ async function realizarConsultaBD(req, res, tipoConsulta, coleccionBD) {
         id = req.params;
 
         if (JSON.stringify(id) === "{}") {
-            // TODO REVISAR SORT DESCENDENTE AQUÍ
-            // https://stackoverflow.com/questions/72174970/how-to-sort-order-by-descending-in-mongo-query
-          result = await coleccion.find().toArray();
+          // sort descendente tomando como referencia un campo de tipo string (puntuacion)
+          result = await coleccion.find().sort({puntuacion: -1}).collation({ locale: "en", numericOrdering: true }).toArray();
+
         } else {
-          //result = await coleccion.find({_id: new mongo.ObjectId(id)}).toArray();
           result = await coleccion.findOne({_id: new mongo.ObjectId(id)});
         }
 
